@@ -91,7 +91,7 @@ if the leaf is healthy.
 
 ---
 
-### 📌 Notes
+### Notes
 
 * Ensure balanced train-validation splitting for all 23 classes.
 * Some classes may contain fewer samples than others.
@@ -99,6 +99,3 @@ if the leaf is healthy.
 
 ---
 
-# 📜 License
-
-This dataset is intended for educational, academic, and research purposes.
