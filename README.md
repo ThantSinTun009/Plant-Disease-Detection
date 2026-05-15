@@ -18,7 +18,7 @@ The primary goal is to enable machine learning and deep learning models to accur
 
 ---
 
-## 📂 Dataset Structure
+## Dataset Structure
 
 Each image is stored in a folder named after its class label using the following naming convention:
 
@@ -41,7 +41,7 @@ if the leaf is healthy.
 
 ---
 
-## 🏷️ Class Labels (23 Total)
+## Class Labels (23 Total)
 
 🍎 Apple
 
