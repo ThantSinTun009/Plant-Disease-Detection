@@ -1,10 +1,10 @@
-# 🧬 Plant Disease Detection
+# Plant Disease Detection
 
 CNN image classification model for detecting plant diseases from leaf images using TensorFlow/Keras.
 
 ---
 
-## 🌿 Overview
+## Overview
 
 This dataset contains high-resolution images of infected and healthy plant leaves, categorized into **23 distinct classes**.
 
@@ -18,7 +18,7 @@ The primary goal is to enable machine learning and deep learning models to accur
 
 ---
 
-# 📂 Dataset Structure
+## 📂 Dataset Structure
 
 Each image is stored in a folder named after its class label using the following naming convention:
 
@@ -41,9 +41,9 @@ if the leaf is healthy.
 
 ---
 
-# 🏷️ Class Labels (23 Total)
+## 🏷️ Class Labels (23 Total)
 
-## 🍎 Apple
+🍎 Apple
 
 * Apple___Apple_scab
 * Apple___Black_rot
@@ -52,7 +52,7 @@ if the leaf is healthy.
 
 ---
 
-## 🌽 Corn (Maize)
+🌽 Corn (Maize)
 
 * Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
 * Corn_(maize)__*Common_rust*
@@ -61,14 +61,14 @@ if the leaf is healthy.
 
 ---
 
-## 🫑 Pepper (Bell)
+🫑 Pepper (Bell)
 
 * Pepper__bell___Bacterial_spot
 * Pepper__bell___healthy
 
 ---
 
-## 🥔 Potato
+🥔 Potato
 
 * Potato___Early_blight
 * Potato___Late_blight
@@ -76,7 +76,7 @@ if the leaf is healthy.
 
 ---
 
-## 🍅 Tomato
+🍅 Tomato
 
 * Tomato_Bacterial_spot
 * Tomato_Early_blight
@@ -91,7 +91,7 @@ if the leaf is healthy.
 
 ---
 
-# 📌 Notes
+### 📌 Notes
 
 * Ensure balanced train-validation splitting for all 23 classes.
 * Some classes may contain fewer samples than others.
