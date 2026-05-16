@@ -2,6 +2,8 @@
 
 CNN image classification model for detecting plant diseases from leaf images using TensorFlow/Keras.
 
+🔗 Project link: https://plant-disease-detection-ffdpakfvcdd4dqhm.eastasia-01.azurewebsites.net/ 
+
 ---
 
 ## Overview
