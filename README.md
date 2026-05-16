@@ -4,6 +4,8 @@ CNN image classification model for detecting plant diseases from leaf images usi
 
 🔗 Project link: https://plant-disease-detection-ffdpakfvcdd4dqhm.eastasia-01.azurewebsites.net/ 
 
+🗂️ Model link: https://drive.google.com/file/d/10ilNbvfSOxj8TYUHupQAAWzCBkuOe-bQ/view?usp=sharing 
+
 ---
 
 ## Overview
