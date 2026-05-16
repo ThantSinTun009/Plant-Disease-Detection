@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="contact-container">
+
+    <div class="contact-header">
+        <h2>Contact Agricultural Support</h2>
+        <p>
+            Reach out for crop disease consultation, fertilizer guidance,
+            and smart farming recommendations for better crop productivity.
+        </p>
+    </div>
+
+    <!-- FLASH MESSAGE -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- FORM -->
+    <form method="POST" action="/contact" class="contact-form">
+
+        <div class="contact-group">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div class="contact-group">
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div class="contact-group">
+            <label>Your Message</label>
+            <textarea name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="contact-btn">
+            Send Message
+        </button>
+
+    </form>
+
+    <!-- INFO CARDS -->
+    <div class="contact-info-grid">
+
+        <div class="info-card">
+            <h4>Crop Support</h4>
+            <p>Get recommendations for plant disease prevention and treatment.</p>
+        </div>
+
+        <div class="info-card">
+            <h4>Fertilizer Advice</h4>
+            <p>Receive guidance for organic and chemical fertilizer usage.</p>
+        </div>
+
+        <div class="info-card">
+            <h4>Smart Agriculture</h4>
+            <p>Improve farming productivity with AI-powered crop monitoring.</p>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

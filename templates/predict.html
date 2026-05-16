@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="predict-wrapper">
+
+    <div class="predict-card">
+
+        <!-- HEADER -->
+        <div class="predict-header">
+            <h2>Plant Disease Detection</h2>
+            <p class="subtitle">
+                Upload a Crop leaf image to identify Diseases.
+            </p>
+        </div>
+
+        <!-- FORM -->
+        <form action="/predict"
+              method="POST"
+              enctype="multipart/form-data"
+              class="prediction-form">
+
+            <div class="upload-section">
+
+                <input type="file"
+                       name="file"
+                       accept="image/*"
+                       required>
+
+                <p class="upload-note">
+                    Supported crops: Tomato, Potato, Corn(Maize), Apple, Pepper(Bell)
+                </p>
+
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="button-group">
+
+                <button type="submit" class="btn-predict">
+                    Predict Disease
+                </button>
+
+                <button type="button"
+                        class="btn-cancel"
+                        onclick="resetForm()">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- IMAGE PREVIEW -->
+        {% if image_path %}
+        <div class="preview-section">
+            <img src="{{ image_path }}" class="preview-image">
+        </div>
+        {% endif %}
+
+        <!-- ========================= -->
+        <!-- RESULT (SAFE VERSION) -->
+        <!-- ========================= -->
+
+        {% if prediction and prediction != "Unknown" and confidence is not none %}
+
+        <div class="result-box">
+
+            <h3 class="result-title">Prediction Result</h3>
+
+            <div class="result-grid">
+
+                <div class="result-card">
+                    <h4>Disease</h4>
+                    <p class="result-value disease">
+                        {{ friendly_prediction }}
+                    </p>
+                </div>
+
+                <div class="result-card">
+                    <h4>Confidence</h4>
+                    <p class="result-value confidence">
+                        {{ confidence|round(2) }}%
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-bar"
+                             style="width: {{ confidence }}%">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        <div class="recommendation-grid">
+            <!-- SOLUTION -->
+            {% if solution %}
+            <div class="solution-box">
+                <h4>Recommended Treatment</h4>
+                <p>{{ solution }}</p>
+            </div>
+            {% endif %}
+
+            <!-- FERTILIZER -->
+            {% if fertilizer %}
+            <div class="fertilizer-box">
+                <h4>Fertilizer Recommendation</h4>
+                <p>{{ fertilizer }}</p>
+            </div>
+            {% endif %}
+
+        </div>
+
+        {% elif prediction == "Unknown" %}
+
+        <!-- ERROR / UNKNOWN CASE -->
+        <div class="result-box">
+
+            <h3 class="result-title">Prediction Result</h3>
+
+            <p style="color:red;">
+                Unable to confidently classify this image.
+                Try another clear leaf image.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!-- RESET SCRIPT -->
+<script>
+function resetForm() {
+
+    document.querySelector('input[type="file"]').value = "";
+
+    const preview = document.querySelector(".preview-section");
+    if(preview) preview.remove();
+
+    const result = document.querySelector(".result-box");
+    if(result) result.remove();
+}
+</script>
+
+{% endblock %}

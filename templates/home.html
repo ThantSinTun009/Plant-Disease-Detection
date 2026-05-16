@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="home-wrapper">
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <h1>AI-powered Plant Disease Detection</h1>
+
+        <p>
+            An intelligent agriculture assistant powered by Deep Learning (CNN architecture)
+            that helps farmers and researchers identify crop diseases
+            instantly using plant leaf images.
+        </p>
+
+        <a href="{{ url_for('predict') }}" class="hero-button">
+            Detect Plant Disease
+        </a>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features-section">
+
+        <div class="feature-card">
+            <h3>Smart Farming Solutions</h3>
+
+            <p>
+                Provides treatment suggestions, prevention methods,
+                and fertilizer recommendations for healthier crops
+                and improved productivity.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Supported Crops</h3>
+
+            <p>
+                <p>
+                    Supports crop detection for 
+                    <strong>Tomato</strong>, 
+                    <strong>Potato</strong>,
+                    <strong>Corn (Maize)</strong>, 
+                    <strong>Apple</strong>, 
+                    <strong>Pepper (Bell)</strong>, 
+                    and several other agricultural plants.
+                </p>
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Disease Identification</h3>
+
+            <p>
+                Identifies common plant conditions including Early Blight, Late Blight, Rust, Scab,
+                and healthy crop states.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
